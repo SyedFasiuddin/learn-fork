@@ -1,4 +1,5 @@
-fn main() {
+#[allow(dead_code)]
+fn fork_example() {
     use fork::{fork, Fork};
 
     match fork() {
@@ -11,4 +12,6 @@ fn main() {
         }
         Err(e) => eprintln!("Fork failed due to {e}"),
     }
+}
+fn main() {
 }
