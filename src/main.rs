@@ -1,4 +1,13 @@
 #[allow(dead_code)]
+fn exec_example() {
+    use std::process::Command;
+
+    let child_handle = Command::new("ls").spawn()
+        .expect("failed to execute process");
+    println!("handle: {child_handle:?}");
+}
+
+#[allow(dead_code)]
 fn fork_example() {
     use fork::{fork, Fork};
 
@@ -13,5 +22,6 @@ fn fork_example() {
         Err(e) => eprintln!("Fork failed due to {e}"),
     }
 }
+
 fn main() {
 }
